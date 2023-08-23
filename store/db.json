@@ -1,0 +1,129 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Tinubu",
+      "last_name": "Ahmed",
+      "username": "tinubu.ahmed@gmail.com",
+      "password": "@ahmed123",
+      "gender": "female",
+      "address": "N 01, aso rock, abuja",
+      "level": 1,
+      "position": "president"
+    },
+    {
+      "id": 2,
+      "first_name": "Junova",
+      "last_name": "Andrew",
+      "username": "junova.andrew@gmail.com",
+      "password": "@andrew123",
+      "gender": "male",
+      "address": "mount olive",
+      "level": 1,
+      "position": "vice president"
+    },
+    {
+      "id": 3,
+      "first_name": "Jun",
+      "last_name": "Drex",
+      "username": "jun.drex@gmail.com",
+      "password": "@drex123",
+      "gender": "female",
+      "address": "mount olive",
+      "level": 2,
+      "position": "secretary"
+    },
+    {
+      "id": 4,
+      "first_name": "Vile",
+      "last_name": "Nov",
+      "username": "vile.nov@gmail.com",
+      "password": "@nov123",
+      "gender": "female",
+      "address": "mount olive",
+      "level": 3,
+      "position": "receptionist"
+    },
+    {
+      "id": 5,
+      "first_name": "Lord",
+      "last_name": "Evilton",
+      "username": "lord.evilton@gmail.com",
+      "password": "@evilton123",
+      "gender": "male",
+      "address": "mount olive",
+      "level": 4,
+      "position": "manager"
+    },
+    {
+      "id": 6,
+      "first_name": "peter",
+      "last_name": "paul",
+      "username": "peter.paul@gmail.com",
+      "password": "@paul123",
+      "gender": "male",
+      "address": "mount olive",
+      "level": 3,
+      "position": "assit secretary"
+    },
+    {
+      "id": 7,
+      "first_name": "Victor",
+      "last_name": "Damian",
+      "username": "victor.damian@gmail.com",
+      "password": "@evilton123",
+      "gender": "male",
+      "address": "mount olive",
+      "level": 5,
+      "position": "C.S.O"
+    },
+    {
+      "id": 8,
+      "first_name": "James",
+      "last_name": "John",
+      "username": "james.john@gmail.com",
+      "password": "@john123",
+      "gender": "male",
+      "address": "mount olive",
+      "level": 4,
+      "position": "P.R.O"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "first task",
+      "id": 1,
+      "description": "one piece",
+      "completed": false,
+      "priority": 1
+    },
+    {
+      "title": "second task",
+      "id": 2,
+      "description": "deadly sins",
+      "completed": false,
+      "priority": 1
+    },
+    {
+      "title": "third task",
+      "id": 3,
+      "description": "mart",
+      "completed": false,
+      "priority": 3
+    },
+    {
+      "title": "fourth task",
+      "id": 4,
+      "description": "continent",
+      "completed": false,
+      "priority": 3
+    },
+    {
+      "title": "fifth task",
+      "id": 5,
+      "description": "power level",
+      "completed": true,
+      "priority": 2
+    }
+  ]
+}
