@@ -15,13 +15,23 @@ export const userReducer = createSlice({
                 users:[action.payload,...state.users]
             }
         },
-        edit_user:(state,action) => {
+        delete_user:(state,action) => {
+            let updatedUsers = state.users.filter((euser=>
+                euser.id != action.payload.id));
             return{
-                users:[action.payload,...state.users]
+                users: updatedUsers,
+            }
+        },
+        edit_user:(state,action) => {
+            const updatedUser = state.users.map((euser=>
+                euser.id == action.payload.id?
+                {...euser,...action.payload}:euser));
+            return{
+                users: updatedUser,
             }
         }
     }
 });
 
 export default userReducer.reducer;
-export const {set_users,add_user} = userReducer.actions;
+export const {set_users,add_user,delete_user,edit_user} = userReducer.actions;

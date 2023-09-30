@@ -43,32 +43,28 @@ const AddTask = () => {
   return (
     <Wrapper>
         <form onSubmit={handleAddtask}>
-        <section>Task Details</section>
-                <div>
-                    <label>title: </label>
+        <label>Task Details</label>
+               
+                    <label>Title: </label>
                     <input type='text' placeholder='title' value={title}
                    onChange={(e)=>set_title(e.target.value)}/>
-                </div>
-                <div>
-                    <label>priority: </label>
+               
+                    <label>Priority: </label>
                     <input type='text' placeholder='priority' value={priority}
                    onChange={(e)=>set_priority(e.target.value)}/>
-                </div>
-                <div>
-                    <label>description: </label>
+              
+                    <label>Description: </label>
                     <input type='text' placeholder='description' value={description}
                    onChange={(e)=>set_description(e.target.value)}/>
-                </div>
-                <div>
-                    <label>completed: </label>
+                
+                    <label>Completed: </label>
                     <input type='text' placeholder='completed' value={completed}
                    onChange={(e)=>set_completed(e.target.value)}/>
-                </div>
-                <div>
+                
                     <Button>
                         Submit
                     </Button>
-                </div>
+                
         </form>
     </Wrapper>
     
@@ -77,4 +73,38 @@ const AddTask = () => {
 
 export default AddTask
 const Wrapper = styled.div`
+ width: 100%;
+    margin: 30px auto;
+    border: 1px solid red;
+    background-color: #3e4f55;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    &>form{
+        width: 350px;
+        gap: 10px;
+        display: grid;
+        align-items: center;
+        & > label:first-child{
+            font-size: 20px;
+            color: white;
+        };
+        & > label{
+            text-align: center;
+            margin-top: 0px;
+            color: rgb(0,0,0);
+            width: 100%;
+        };
+        &.trash{
+            right: 0;
+            color: white;
+        };
+        &>div{
+            display: flex;
+            justify-content: center;
+        }
+    }
 `

@@ -3,11 +3,13 @@ import Styled from 'styled-components'
 import{Link} from 'react-router-dom'
 import tasksImg from '../assets/tasks.png'
 import usersImg from '../assets/users.png'
+import productsImg from '../assets/shopping-online.jpg'
 import { useSelector } from 'react-redux'
 
 const Dashboard = () => {
     const {users} = useSelector(store=>store.users);
     const {tasks} = useSelector(store=>store.tasks);
+    const {products} = useSelector(store=>store.products);
     // console.log(users,'store')
   return (
     <Wrapper>
@@ -25,15 +27,29 @@ const Dashboard = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt asperiores dolore autem corrupti quam, repudiandae tempora veniam accusamus aut deserunt velit reiciendis a rem pariatur quis reprehenderit molestias quo sit.
             </p>
         </Link>
-        <Link to="tasks">
+        <Link to="../tasks">
           <div>
-          <img src={tasksImg}/>
-          <span>
-            TASKS
-          </span>
+                <img src={tasksImg}/>
+                <span>
+                    TASKS
+                </span>
           </div>
           <div>
-            Total Tasks: <span>{tasks.length}</span>
+                Total Tasks: <span>{tasks.length}</span>
+          </div>
+          <p>
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis facilis quasi voluptatem qui, sequi quae aliquid non dolorum unde? Libero maiores aliquam laudantium quam mollitia soluta incidunt culpa debitis adipisci.
+            </p> 
+        </Link>
+        <Link to="../products">
+          <div>
+            <img src={productsImg}/>
+            <span>
+                PRODUCTS
+            </span>
+          </div>
+          <div>
+            Total Products: <span>{products.length}</span>
           </div>
           <p>
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis facilis quasi voluptatem qui, sequi quae aliquid non dolorum unde? Libero maiores aliquam laudantium quam mollitia soluta incidunt culpa debitis adipisci.

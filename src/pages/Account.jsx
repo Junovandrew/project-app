@@ -5,12 +5,14 @@ import Header from '../components/Header'
 import {RiHome8Fill as DashboardIcon} from 'react-icons/ri'
 import{SiTask as TaskIcon} from 'react-icons/si'
 import{FaUserSecret as UserIcon} from 'react-icons/fa'
+import{AiOutlineShoppingCart as ProductIcon} from 'react-icons/ai'
 import {Link} from 'react-router-dom'
-import {Dashboard,Tasks,Users} from '.'
+import {Dashboard,Tasks,Users,Products} from '.'
 import Api from '../api';
 import { set_users } from '../redux/reducers/UserReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { set_tasks } from '../redux/reducers/taskReducer'
+import { set_products } from '../redux/reducers/productReducer'
 import { Button } from '../components'
 import {HiOutlineLogout as LogoutIcon} from 'react-icons/hi'
 
@@ -29,6 +31,11 @@ const link_list=[
     name:"Users",
     path:"users",
     icon: <UserIcon/>,
+  },
+  {
+    name:"Products",
+    path:"products",
+    icon: <ProductIcon/>,
   }
 ]
 const Account = () => {
@@ -44,6 +51,10 @@ const Account = () => {
         Api.get('tasks')
         .then(data=>{
             dispatch(set_tasks(data));
+        });
+        Api.get('products')
+        .then(data=>{
+            dispatch(set_products(data));
         })
     const path = location.pathname;
     // console.log(path,"path");
@@ -80,6 +91,7 @@ const Account = () => {
               <Route path="/dashboard" element={<Dashboard/>}/>
               <Route path="/tasks" element={<Tasks/>}/>
               <Route path="/users" element={<Users/>}/>
+              <Route path="/products" element={<Products/>}/>
             </Routes>
          </section>
       </Wrapper>

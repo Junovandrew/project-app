@@ -6,7 +6,7 @@ import {GoPersonAdd as AddIcon} from 'react-icons/go'
 import {useModal} from '../hooks/useModal'
 import { AddUser } from '../modals'
 import { EditUser } from '../modals'
-import {TbUserEdit as EditIcon} from 'react-icons/tb'
+
 
 const order_list = [
     'Name',
@@ -26,9 +26,10 @@ const Users = () => {
         set_modal_content(<AddUser/>)
         handleShowModal(true);
     };
-    const editUser=()=>{
-        set_modal_content(<EditUser/>)
+    const editUser=(user)=>{
+        set_modal_content(<EditUser user={user}/>)
         handleShowModal(true);
+        
     };
     useEffect(()=>{
             set_filtered_users(users);
@@ -115,7 +116,6 @@ const Users = () => {
             <div>
                 <OrderSection data={order_list} onChange={set_property} onChange2={set_order}/>
                 <Button onClick={addUser} bg="rgb(150,230,150)" color="#333" label={<><span>User</span><AddIcon/></>}/>
-                <Button onClick={editUser} bg="rgb(150,230,150)" color="#333" label={<><span>Edit</span><EditIcon/></>}/>
             </div>
             
         </div>
@@ -131,7 +131,7 @@ const Users = () => {
             <div>
                     {
                         filtered_users && filtered_users.length > 0 ? filtered_users.map(
-                            (euser)=><div key={euser.id}>
+                            (euser)=><div key={euser.id} onClick={()=>editUser(euser)}>
                                 <div>{euser.first_name}</div>
                                 <div>{euser.last_name}</div>
                                 <div>{euser.username}</div>

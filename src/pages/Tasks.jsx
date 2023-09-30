@@ -4,7 +4,7 @@ import Styled from 'styled-components'
 import { Searchform, OrderSection } from '../components'
 import {BsPlusCircleFill as AddIcon} from 'react-icons/bs'
 import {useModal} from '../hooks/useModal'
-import { AddTask } from '../modals'
+import { AddTask, EditTask } from '../modals'
 import Button from '../components/Button'
 
 const order_list = [
@@ -24,6 +24,11 @@ const Tasks = () => {
     const addTask=()=>{
         set_modal_content(<AddTask/>)
         handleShowModal(true);
+    };
+    const editTask=(task)=>{
+        set_modal_content(<EditTask task={task}/>)
+        handleShowModal(true);
+        
     };
     useEffect(()=>{
             set_filtered_tasks(tasks);
@@ -81,7 +86,7 @@ const Tasks = () => {
                 if(name == 'name'){
                     result = [...filtered_tasks].sort((a,b)=>{
                         if(a.first_name.concat(a.last_name).toLowerCase()<b.first_name.concat(b.last_name).toLowerCase())return 1;
-                        if(a.first_name.concat(a.last_name).toLowerCase()>b.first_name.concat(b.last_name).toLowerCase())return -1;
+                        if(a.first_name.concat(a.last_name).toLowerCase()>b.first_name.concat(b.hlast_name).toLowerCase())return -1;
                         return 0;
                     });
                 }
@@ -125,7 +130,7 @@ const Tasks = () => {
         <div>
             {
                 filtered_tasks && filtered_tasks.length > 0 ? filtered_tasks.map(
-                    (etask)=><div key={etask.id}>
+                    (etask)=><div key={etask.id} onClick={()=>editTask(etask)}>
                         <div>{etask.title}</div>
                         <div>{etask.priority == 1?'low':etask.priority == 2?'medium':'high'}</div>
                         <div>{etask.description}</div>

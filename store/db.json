@@ -125,5 +125,42 @@
       "completed": true,
       "priority": 2
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "black trousers",
+      "category": "fashion",
+      "price": 2500,
+      "quantity": "79"
+    },
+    {
+      "id": 2,
+      "name": "green trousers",
+      "category": "fashion",
+      "price": 2500,
+      "quantity": 96
+    },
+    {
+      "id": 3,
+      "name": "samsung tablet",
+      "category": "electronics",
+      "price": 25000,
+      "quantity": 99
+    },
+    {
+      "id": 4,
+      "name": "gold chairs",
+      "category": "furniture",
+      "price": 15000,
+      "quantity": 12
+    },
+    {
+      "id": 5,
+      "name": "rolex",
+      "category": "accessories",
+      "price": 30000,
+      "quantity": 15
+    }
   ]
 }
